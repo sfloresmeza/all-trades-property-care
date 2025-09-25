@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuTrigger,
-// } from "@/components/ui/dropdown-menu";
 
 interface NavbarProps {
   sections: Array<{ id: string; title: string }>;
@@ -26,10 +20,6 @@ const Navbar = ({ sections }: NavbarProps) => {
   // Separate main sections from services
   const mainSections = sections.filter(section =>
     section.id === 'trade-service' || section.id === 'contact'
-  );
-
-  const serviceSections = sections.filter(section =>
-    section.id !== 'trade-service' && section.id !== 'contact'
   );
 
   return (
@@ -108,21 +98,6 @@ const Navbar = ({ sections }: NavbarProps) => {
                   {section.id === 'trade-service' ? 'Our Services' : section.title}
                 </button>
               ))}
-
-              <div className="py-2">
-                <p className="text-sm font-medium text-foreground mb-2">All Services:</p>
-                <div className="pl-4 space-y-2">
-                  {serviceSections.map((section) => (
-                    <button
-                      key={section.id}
-                      onClick={() => scrollToSection(section.id)}
-                      className="block text-left text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
-                    >
-                      {section.title}
-                    </button>
-                  ))}
-                </div>
-              </div>
 
               <Button className="bg-primary hover:bg-primary/90 mt-4">
                 <Phone className="w-4 h-4 mr-2" />
