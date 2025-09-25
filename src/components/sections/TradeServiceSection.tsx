@@ -24,7 +24,7 @@ const TradeServiceSection = ({ id }: TradeServiceSectionProps) => {
   ];
 
   return (
-    <section id={id} className="bg-background">
+    <section id={id} className="bg-background py-16">
       <div className="container mx-auto px-4">
         <div
           ref={ref}
