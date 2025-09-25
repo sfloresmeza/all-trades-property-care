@@ -104,6 +104,21 @@ const Navbar = ({ sections }: NavbarProps) => {
                 </button>
               ))}
 
+              <div className="py-2">
+                <p className="text-sm font-medium text-foreground mb-2">All Services:</p>
+                <div className="pl-4 space-y-2">
+                  {serviceSections.map((section) => (
+                    <button
+                      key={section.id}
+                      onClick={() => scrollToSection(section.id)}
+                      className="block text-left text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                    >
+                      {section.title}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <Button className="bg-primary hover:bg-primary/90 mt-4">
                 <Phone className="w-4 h-4 mr-2" />
                 Call Us
