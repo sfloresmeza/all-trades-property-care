@@ -8,6 +8,6 @@ export interface SectionProps {
 
 export interface Section {
     id: string;
-    component: React.ComponentType<never>;
-    props: Record<string, never>;
+    component: React.ComponentType<any>;
+    props: Record<string, any>;
 }
