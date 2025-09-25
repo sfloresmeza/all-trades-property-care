@@ -2,6 +2,7 @@ import type {Section} from "@/types/section.ts";
 import HeroSection from "@/components/sections/HeroSection.tsx";
 import TradeServiceSection from "@/components/sections/TradeServiceSection.tsx";
 import ServiceSection from "@/components/sections/ServiceSection.tsx";
+import ContactSection from "@/components/sections/ContactSection.tsx";
 
 export const sections: Section[] = [
   {
@@ -123,18 +124,12 @@ export const sections: Section[] = [
     }
   },
   {
-    id: "custom-cleaning",
-    component: ServiceSection,
+    id: "contact",
+    component: ContactSection,
     props: {
-      id: "custom-cleaning",
-      title: "CUSTOM CLEANING SERVICES",
-      content: "Every home is unique, and sometimes you need a cleaning plan that reflects that. Our custom cleaning service offers personalized solutions to meet your specific needs, ensuring your home is cleaned exactly how you like it.\nWhether you need a specific room cleaning or have special requirements, our tailored home cleaning options include:\n- Personalized cleaning plan to fit your schedule\n- Special request cleaning for particular tasks\n- Flexible service options, including one-time or recurring\n- Combining two or more services such as home cleaning plus carpet cleaning plus window cleaning\nChoose our custom cleaning service for a truly personalized approach to maintaining your home.",
-      imageUrl: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      imageAlt: "Custom cleaning services",
-      imagePosition: "right",
-      variant: "alternate"
+      id: "contact"
     }
-  },
+  }
 ]
 
 // Navigation items for the navbar
