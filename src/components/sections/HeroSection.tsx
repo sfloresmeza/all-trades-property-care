@@ -25,7 +25,7 @@ const HeroSection = ({ id }: HeroSectionProps) => {
 
   return (
     <section id={id} className="relative min-h-screen flex items-center bg-gradient-to-br from-background to-off">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 pt-24 lg:pt-0">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className={`space-y-8 ${isVisible ? 'animate-fade-in-left' : 'opacity-0'}`}>
