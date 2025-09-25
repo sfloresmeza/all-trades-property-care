@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
-// import FloatingCallButton from "@/components/FloatingCallButton";
-// import Footer from "@/components/Footer";
 import { sections, navigationSections } from "@/sections";
+import Footer from "@/components/Footer.tsx";
 
 const Index = () => {
   return (
@@ -15,8 +14,7 @@ const Index = () => {
         })}
       </main>
 
-      {/*<Footer />*/}
-      {/*<FloatingCallButton />*/}
+      <Footer />
     </div>
   );
 };
