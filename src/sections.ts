@@ -1,5 +1,6 @@
 import type {Section} from "@/types/section.ts";
 import HeroSection from "@/components/sections/HeroSection.tsx";
+import TradeServiceSection from "@/components/sections/TradeServiceSection.tsx";
 
 export const sections: Section[] = [
   {
@@ -7,6 +8,13 @@ export const sections: Section[] = [
     component: HeroSection,
     props: {
       id: "hero"
+    }
+  },
+  {
+    id: "trade-service",
+    component: TradeServiceSection,
+    props: {
+      id: "trade-service"
     }
   },
 ]
