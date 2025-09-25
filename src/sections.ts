@@ -134,6 +134,14 @@ export const sections: Section[] = [
 
 // Navigation items for the navbar
 export const navigationSections = [
-    { id: 'trade-service', title: 'Our Services' },
-    { id: 'contact', title: 'Contact Us' }
+  { id: 'trade-service', title: 'Our Services' },
+  { id: 'contact', title: 'Contact Us' },
+  { id: 'post-construction', title: 'Post Construction' },
+  { id: 'office-cleaning', title: 'Office Cleaning' },
+  { id: 'post-staging', title: 'Post Staging' },
+  { id: 'event-center', title: 'Event Center' },
+  { id: 'move-cleaning', title: 'Move Cleaning' },
+  { id: 'deep-cleaning', title: 'Deep Cleaning' },
+  { id: 'regular-cleaning', title: 'Regular Cleaning' },
+  { id: 'airbnb-cleaning', title: 'Airbnb Cleaning' },
 ];

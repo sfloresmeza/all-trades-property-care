@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import {Menu, X, Phone, ChevronDown} from "lucide-react";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
 
 interface NavbarProps {
   sections: Array<{ id: string; title: string }>;
@@ -20,6 +21,10 @@ const Navbar = ({ sections }: NavbarProps) => {
   // Separate main sections from services
   const mainSections = sections.filter(section =>
     section.id === 'trade-service' || section.id === 'contact'
+  );
+
+  const serviceSections = sections.filter(section =>
+    section.id !== 'trade-service' && section.id !== 'contact'
   );
 
   return (
@@ -51,23 +56,23 @@ const Navbar = ({ sections }: NavbarProps) => {
               </button>
             ))}
 
-            {/*/!* Services Dropdown *!/*/}
-            {/*<DropdownMenu>*/}
-            {/*  <DropdownMenuTrigger className="flex items-center text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">*/}
-            {/*    Services <ChevronDown className="ml-1 h-4 w-4" />*/}
-            {/*  </DropdownMenuTrigger>*/}
-            {/*  <DropdownMenuContent align="end" className="w-64">*/}
-            {/*    {serviceSections.map((section) => (*/}
-            {/*      <DropdownMenuItem*/}
-            {/*        key={section.id}*/}
-            {/*        onClick={() => scrollToSection(section.id)}*/}
-            {/*        className="cursor-pointer"*/}
-            {/*      >*/}
-            {/*        {section.title}*/}
-            {/*      </DropdownMenuItem>*/}
-            {/*    ))}*/}
-            {/*  </DropdownMenuContent>*/}
-            {/*</DropdownMenu>*/}
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+                Services <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                {serviceSections.map((section) => (
+                  <DropdownMenuItem
+                    key={section.id}
+                    onClick={() => scrollToSection(section.id)}
+                    className="cursor-pointer"
+                  >
+                    {section.title}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             <Button className="bg-primary hover:bg-primary/90">
               <Phone className="w-4 h-4 mr-2" />

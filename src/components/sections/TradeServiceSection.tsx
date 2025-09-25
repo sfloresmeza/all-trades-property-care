@@ -31,7 +31,7 @@ const TradeServiceSection = ({ id }: TradeServiceSectionProps) => {
           className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
         >
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            TRADE SERVICE (ALL-IN-ONE)
+            TRADE SERVICE<br/>(ALL-IN-ONE)
           </h2>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             At ALLTRADES PROPERTY CARE, we understand that managing a property can fell like managing ten different contractors at once. That's why we created a smarter solution – a single, reliable partner who brings every trade under one roof.
