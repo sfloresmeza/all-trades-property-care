@@ -9,12 +9,14 @@ interface NavbarProps {
 
 const Navbar = ({ sections }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showServices, setShowServices] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsOpen(false);
+      setShowServices(false);
     }
   };
 
@@ -82,7 +84,7 @@ const Navbar = ({ sections }: NavbarProps) => {
 
           {/* Mobile menu button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => { setIsOpen((v) => !v); setShowServices(false); }}
             className="md:hidden p-2"
             aria-label="Toggle menu"
           >
@@ -104,8 +106,17 @@ const Navbar = ({ sections }: NavbarProps) => {
                 </button>
               ))}
 
-              <div className="py-2">
-                <p className="text-sm font-medium text-foreground mb-2">All Services:</p>
+              <button
+                onClick={() => setShowServices((v) => !v)}
+                className="flex items-center justify-between text-left text-muted-foreground hover:text-foreground transition-colors py-2"
+              >
+                <span className="text-sm font-medium">Services</span>
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${showServices ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {showServices && (
                 <div className="pl-4 space-y-2">
                   {serviceSections.map((section) => (
                     <button
@@ -117,7 +128,7 @@ const Navbar = ({ sections }: NavbarProps) => {
                     </button>
                   ))}
                 </div>
-              </div>
+              )}
 
               <Button className="bg-primary hover:bg-primary/90 mt-4">
                 <Phone className="w-4 h-4 mr-2" />
